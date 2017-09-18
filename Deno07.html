@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #out{
+            background-color: chartreuse;
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .inside{
+            background-color: yellow;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+        }
+        #button{
+            align-self: center;
+            margin: 0 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="out">
+    <div class="inside"></div>
+    <div class="inside"></div>
+    <div class="inside"></div>
+    <div class="inside"></div>
+    <button id="button">off</button>
+</div>
+<a href="www.baidu.com">what is dead may never die but rises again harder and stronger</a>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(".inside").on("click",function () {
+        $(this).css({
+            "background": "#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+//            "background": "#"+888
+        })
+        console.log(event.offsetX, event.offsetY);//获取点击的div，鼠标点击的坐标参考系是相对于这个div而言
+        console.log(event.pageX, event.pageY);
+        console.log(event.clientX, event.clientY);
+        event.stopPropagation();//阻止子元素的点击事件影响冒泡到父级元素
+    });
+    $("#out").on("click",function () {
+        $(this).css({
+            "background": "#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+//            "background": "#"+888
+        })
+
+    });
+    $("a").click(function () {
+        if(Date.now()%2 == 0){
+            event.preventDefault();
+        }
+    })
+
+//    $(".inside").mouseenter(function () {
+//        $(this).css({
+//            "background": "#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+//        })
+//    });//mouseenter和mouseover的区别是。mouseover在进入子元素的区域是也会触发mouseout事件
+//    $(".inside").mouseleave(function () {
+//        $(this).css({
+//            "background": "#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+//        })
+//    });第一种方法
+//    $(".inside")
+//        .on("mouseenter", function () {
+//        $(this).css({
+//            "background": "#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+//            })
+//        })
+//        .on("mouseleave", function () {
+//            $(this).css({
+//                "background": "#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+//            })
+//        })第二种方法
+    $(".inside").hover(function () {
+        $(this).css({
+            "background": "#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+        })
+    }, function () {
+        $(this).css({
+            "background": "#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+        })
+    })//这种方法其实是对第一种方法的包装
+    $("#button").click(function () {
+        $(".inside").off("mouseleave");
+    });//禁止启动mouseleave
+    console.log()
+</script>
+</body>
+</html>
