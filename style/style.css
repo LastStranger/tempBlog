@@ -19,7 +19,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 body{
-		background: #020202 url(../images/highlight.jpg) no-repeat center;
+		background: #020202 url(../images/highlight.jpg) no-repeat ;
 		font-family:Helvatica,Arial, "Times New Roman", Times, serif;
 		font-size:12px;
 		color:#bb5544;
@@ -29,6 +29,15 @@ body{
 }
 
 
+#click{
+    position: fixed;
+    left: 90vw;
+    top: 5vh;
+    color:gray;
+    font-size: 2em;
+    line-height: 1.2em;
+
+}
 #wrapper{
 		width:960px;
 		margin:0 auto;
@@ -201,8 +210,10 @@ p{       font-family:Arial, Helvetica, sans-serif;
 
 .Skills_items{
 		width:270px;
+    /*height: 100vh;*/
 		float: right;
 		margin-top: 75px; margin-bottom:20px;
+    /*border-left: #666 1px dotted;*/
 		}
 	
 .Skills_items .block{
@@ -258,10 +269,21 @@ p{       font-family:Arial, Helvetica, sans-serif;
 
 
 .about_items{
-		width:630px;
-		float:left;
-		padding-bottom:20px;}
+    width:630px;
+    float:left;
+    padding-bottom:20px;
+}
 
+.about_items a{
+    margin: 0.5em;
+
+}
+
+.about_items p{
+    font: 0.5em/2 SimSum;
+    padding-bottom: 1em;
+    border-bottom:#666 1px dotted;
+}
 .about_img{
 		width:300px;
 		height:193px;
@@ -434,7 +456,6 @@ p{       font-family:Arial, Helvetica, sans-serif;
 	flex-direction: row;
 	flex-flow: nowrap;
 	justify-content: space-around;
-	/*flex-flow: row wrap-reverse;*/
   
    
 	
@@ -456,8 +477,8 @@ p{       font-family:Arial, Helvetica, sans-serif;
 }
 .nav li a {
     float: left;
-	
     padding:0px 13px 0px 13px;
+
 }
 
 
@@ -476,10 +497,8 @@ p{       font-family:Arial, Helvetica, sans-serif;
 
 
 .nav li a span {
-
- line-height:16px;
- 
-  
+    line-height:16px;
+    font-size: 1.2em;
 }
 
 

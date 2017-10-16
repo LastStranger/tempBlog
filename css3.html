@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>John</title>
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="click"></div>
+<!--wrapper start-->
+<div id="wrapper">
+    <!--mainbody start-->
+    <div id="mainbody">
+        <div id="logo">
+            <a href="index.html"></a>
+        </div>
+        <!--navigation start-->
+        <div id="navigation">
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html"><span>Home</span></a></li>
+                    <li>|</li>
+                    <li><a href="about.html"><span>html5</span></a></li>
+                    <li>|</li>
+                    <li><a href="css3.html" class="active"><span>css3</span></a></li>
+                    <li>|</li>
+                    <li><a href="javascript.html"><span>Javascript</span></a></li>
+                    <li>|</li>
+                    <li><a href="jQuery.html"><span>jQuery</span></a></li>
+                    <li>|</li>
+                    <li><a href="others.html"><span>others</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--navigation end-->
+        <!--main start-->
+        <div id="main">
+            <!--about_page start-->
+            <div class="about_page">
+                <!--about_items start-->
+                <div class="about_items">
+                    <div class="grey_bar">
+                        <!--breadcrumbs start-->
+                        <div id="breadcrumbs">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>» </li>
+                                <li>css3</li>
+                            </ul>
+                        </div>
+                        <!--breadcrumbs end-->
+                        <h2>
+                            css3
+                        </h2>
+                    </div>
+                    <h2>
+                        基础知识</h2>
+                    <br />
+                    <p>
+                        1. 标准css盒模型width就是内容的宽度，不包括padding，border和margin。IE盒模型width包括padding和border。 <br />
+                        2. input是内联标签，块级元素才有padding和margin<br>
+                        3. border:1px solid blue<br>
+                        4. 外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。
+                        合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+                        只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并。<br>
+                        5. font: 16px/2 SimSum;/2代表行高，多少行，多少高度<br>
+                        6. display：block，可以把行内元素变为块级元素，行内元素设置不了width和height和margin等<br>
+                        display：inline-block可以把行内元素变为特殊的块级元素，有块级元素的特征，但是可以与其它行内元素并存<br>
+                        display：inline，或者inline-block把块级元素变为行内元素，常用在ul>li<br>
+                        display:none.实现将元素隐藏，所占空间也被回收<br>
+                        7. background-image：url（""）<br>
+                        background-repeat：repeat-y，no-repeat<br>
+                        background-position：0% 0% px px center center<br>
+                        background-size:contain表示元素刚好包含这个图片，cover表示充满整个元素四个面都有接触<br>
+                        background：url color no-repeat center center ；background-size：contain；<br>
+                        8. 浮动从窗口上看就是看水面一样，里面的元素浮动的话就会飘起来，这样最外面的div就没有
+                        子元素了，就像飘在水面的叶子，都浮动的话会挨在一起，最外面的div的背景颜色也失效了，因为里面没有元素把高度撑起来
+                        的clear：left表示底下有根木头左半部分浮起来了，另一半还在水底<br>
+                        9. relative的作用是围住absoulte，一般relative不设置left和top，fixed表示相对窗口定位,
+                        绝对定位后，因为设置了top等定位，可以使用margin来继续移动元素的位置，margin-top：-30px<br>
+                        10. flexbox默认空间不够会压缩子元素的宽度，即使子元素设置了宽度<br>
+                        flex-flow：row wrap<br>
+                        space-between就是左右当起点，剩余空间均匀分配<br>
+                        space-around就是每个子元素具有相同的外边距，使得相邻两个子元素的空间比左右两边的宽<br>
+                        align-content：stretch每行元素同比例增大，最大限度的使容器高度充满<br>
+                        align-content:flex-start最大限度使得占据高度最小同时不使得每行高低不一<br>
+                        aling-items：每行的元素对齐方式，作用于align-content属性<br>
+                        当只有一个子元素的时候，容器设置flex加justify-content：center水平居中，然后因为就只有一行<br>
+                        所以利用align-items：center实现中心对齐<br>
+                        11. vh这个单位是相比较视口的<br>
+                        vw是相比较的宽度<br>
+                        10%是相比较父元素的10%<br>
+                    </p>
+                    <br />
+                    <h2>
+                        相关链接</h2>
+                    <br />
+                    <p>
+                        <a href="http://www.w3school.com.cn/" target="_blank">W3school</a><br>
+                        <a href="http://www.runoob.com/" target="_blank">菜鸟教程</a><br>
+                        <a href="http://cssreference.io/" target="_blank">cssreference</a>一个对css样式有详细解释的网站<br>
+                        <a href="https://css-tricks.com/" target="_blank">css-tricks</a>一个超棒的css学习网站<br>
+                        <a href="https://caniuse.com/" target="_blank">Can I use</a>一个分析各游览器对该样式的支持性网站<br>
+                        <a href="https://www.cssfontstack.com/" target="_blank">CSS Font Stack</a>
+                        一个对各版本系统对各字体样式支持性的网站<br>
+                        <a href="https://v4-alpha.getbootstrap.com/" target="_blank">bootstrap英文网</a><br>
+                        <a href="http://www.bootcss.com/" target="_blank">bootstrap中文网</a><br>
+                    </p>
+                    <br />
+
+                </div>
+                <!--about_items end-->
+                <!--Skills_items end-->
+                <div class="Skills_items">
+                    <!--block start-->
+                    <div class="block">
+                        <h3>
+                            总结</h3>
+                        <br />
+                        <p>
+                            CSS是页面的皮肤，页面良好的视觉效果都是由CSS和js组合制作的，也是前端的基础知识</p>
+                    </div>
+                    <!--block end-->
+
+                    <!--block end-->
+                    <div id="temp"></div>
+                </div>
+                <!--Skills_items end-->
+            </div>
+            <!--about_page end-->
+        </div>
+        <!--main end-->
+    </div>
+    <!--mainboty end-->
+</div>
+<!--wrapper end-->
+<div class="clearfix">
+</div>
+<!--footer start-->
+<div id="footer">
+    <p>
+        <span><a href="#">Copyright</a> wwww.zhenli.me <a href="http://www.zhenli.me/" target="_blank" title="我的博客">我的博客</a></span>
+    </p>
+    <p>
+        <!--<div class="clearfix">-->
+        <!--</div>-->
+</div>
+<!--footer end-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+    var click = setInterval(function () {
+        var time = new Date();
+        var r = parseInt(1000*Math.random());
+        while(r>188 ||r<60){
+            r = parseInt(1000*Math.random());
+        }
+        var g = parseInt(1000*Math.random());
+        while(g>150 || g<50 ||g>r){
+            g = parseInt(1000*Math.random());
+        }
+        var b = parseInt(1000*Math.random());
+        while(b>100 ||b<50 ||b>r||b>g){
+            b = parseInt(1000*Math.random());
+        }
+
+        $("#click").html(time.toLocaleTimeString())
+            .css({
+//                "color":"#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+                "color": "rgb("+ r + "," + g + "," + b + ")"
+            });
+    }, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>John</title>
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="click"></div>
+<!--wrapper start-->
+<div id="wrapper">
+    <!--mainbody start-->
+    <div id="mainbody">
+        <div id="logo">
+            <a href="index.html"></a>
+        </div>
+        <!--navigation start-->
+        <div id="navigation">
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html"><span>Home</span></a></li>
+                    <li>|</li>
+                    <li><a href="about.html"><span>html5</span></a></li>
+                    <li>|</li>
+                    <li><a href="css3.html"><span>css3</span></a></li>
+                    <li>|</li>
+                    <li><a href="javascript.html"><span>Javascript</span></a></li>
+                    <li>|</li>
+                    <li><a href="jQuery.html" class="active"><span>jQuery</span></a></li>
+                    <li>|</li>
+                    <li><a href="others.html"><span>others</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--navigation end-->
+        <!--main start-->
+        <div id="main">
+            <!--about_page start-->
+            <div class="about_page">
+                <!--about_items start-->
+                <div class="about_items">
+                    <div class="grey_bar">
+                        <!--breadcrumbs start-->
+                        <div id="breadcrumbs">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>» </li>
+                                <li>jQuery</li>
+                            </ul>
+                        </div>
+                        <!--breadcrumbs end-->
+                        <h2>
+                            jQuery
+                        </h2>
+                    </div>
+                    <h2>
+                        基础知识</h2>
+                    <br />
+                    <p>
+                        1. $作为一个函数，有两个方面的功能，一个作为函数调用，一个作为对象调用<br />
+                        2. DOM文档加载步骤:<br>
+                            ——解析HTML结构<br>
+                            ——加载外部的脚本和样式文件<br>
+                            ——解析并执行脚本代码<br>
+                            ——执行$(function(){})内对应代码
+                            ——加载图片等二进制资源
+                            ——页面加载完毕，执行window.onload<br>
+                        3.$(function())是$(doucment).ready(function())的简写<br>
+                        4. $('#bar').index('li'); //1，传递一个选择器，返回#bar在所有li中的索引位置<br>
+                        $('#bar').index(); //1，不传递参数，返回这个元素在同辈中的索引位置。 兄弟元素 <br>
+                        5. == 和 != 比较若类型不同，先偿试转换类型，再作值比较，最后返回值比较结果 。
+                        而=== 和 !== 只有在相同类型下,才会比较其值。<br>
+                        6. mouseenter()当鼠标在元素上穿过时触发。<br>
+                        mouseenter与mouseover的区别是，鼠标从mouseover的子元素上穿过时也会触发而mouseenter不会。<br>
+                        7. 具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled
+                        使用prop()，其他的使用 attr()<br>
+                    </p>
+                    <br />
+                    <h2>
+                        相关链接</h2>
+                    <br />
+                    <p>
+                        <a href="http://www.w3school.com.cn/" target="_blank">W3school</a><br>
+                        <a href="http://www.runoob.com/" target="_blank">菜鸟教程</a><br>
+                        <a href="http://jquery.cuishifeng.cn/" target="_blank">jQuery在线中文文档</a><br>
+                        <a href="http://www.jq22.com/" target="_blank">jQueryUI素材网</a><br>
+                    </p>
+                    <br />
+
+                </div>
+                <!--about_items end-->
+                <!--Skills_items end-->
+                <div class="Skills_items">
+                    <!--block start-->
+                    <div class="block">
+                        <h3>
+                            总结</h3>
+                        <br />
+                        <p>
+                            jQuery是javascript的一个优秀函数库，可以极大减少开发的复杂度</p>
+                    </div>
+                    <!--block end-->
+
+                    <!--block end-->
+                </div>
+                <!--Skills_items end-->
+            </div>
+            <!--about_page end-->
+        </div>
+        <!--main end-->
+    </div>
+    <!--mainboty end-->
+</div>
+<!--wrapper end-->
+<div class="clearfix">
+</div>
+<!--footer start-->
+<div id="footer">
+    <p>
+        <span><a href="#">Copyright</a> wwww.zhenli.me <a href="http://www.zhenli.me/" target="_blank" title="我的博客">我的博客</a></span>
+    </p>
+    <p>
+        <!--<div class="clearfix">-->
+        <!--</div>-->
+</div>
+<!--footer end-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+//    var click = setInterval(function () {
+//        var time = new Date();
+//        $("#click").html(time.toLocaleTimeString())
+//            .css({
+//                "color":"#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+//            });
+//    }, 1000);
+var click = setInterval(function () {
+    var time = new Date();
+    var r = parseInt(1000*Math.random());
+    while(r>188 ||r<60){
+        r = parseInt(1000*Math.random());
+    }
+    var g = parseInt(1000*Math.random());
+    while(g>150 || g<50 ||g>r){
+        g = parseInt(1000*Math.random());
+    }
+    var b = parseInt(1000*Math.random());
+    while(b>100 ||b<50 ||b>r||b>g){
+        b = parseInt(1000*Math.random());
+    }
+
+    $("#click").html(time.toLocaleTimeString())
+        .css({
+//                "color":"#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
+            "color": "rgb("+ r + "," + g + "," + b + ")"
+        });
+}, 1000);
+</script>
+</body>
+</html>
