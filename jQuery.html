@@ -124,36 +124,7 @@
         <!--</div>-->
 </div>
 <!--footer end-->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script>
-//    var click = setInterval(function () {
-//        var time = new Date();
-//        $("#click").html(time.toLocaleTimeString())
-//            .css({
-//                "color":"#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
-//            });
-//    }, 1000);
-var click = setInterval(function () {
-    var time = new Date();
-    var r = parseInt(1000*Math.random());
-    while(r>188 ||r<60){
-        r = parseInt(1000*Math.random());
-    }
-    var g = parseInt(1000*Math.random());
-    while(g>150 || g<50 ||g>r){
-        g = parseInt(1000*Math.random());
-    }
-    var b = parseInt(1000*Math.random());
-    while(b>100 ||b<50 ||b>r||b>g){
-        b = parseInt(1000*Math.random());
-    }
-
-    $("#click").html(time.toLocaleTimeString())
-        .css({
-//                "color":"#"+parseInt(10*Math.random())+parseInt(10*Math.random())+parseInt(10*Math.random())
-            "color": "rgb("+ r + "," + g + "," + b + ")"
-        });
-}, 1000);
-</script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/render.js"> </script>
 </body>
 </html>
