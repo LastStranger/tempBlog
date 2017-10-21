@@ -35,7 +35,7 @@ $(".update ul li").on({
 });
 
 
-$(".nav ul li a").on({
+$(".nav ul li a:not(.active)").on({
     mouseover:function () {
 //         var temp = new Date().getTime()%2;
 // // var angel = temp%2
