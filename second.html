@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col col-md-1"></div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="col col-md-4"><a href="first.html">产品中心</a></div>
+                    <div class="col col-md-4 active"><a href="#">幸福企业</a></div>
+                    <div class="col col-md-4"><a href="third.html">新闻中心</a></div>
+                </div>
+            </div>
+            <div class="col col-md-2"><a href="index.html"><img class="img-responsive" src="img/LIRIK2.png" alt="haha"></a></div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="col col-md-4"><a href="fourth.html">电子商务</a></div>
+                    <div class="col col-md-4"><a href="fifth.html">店铺展示</a></div>
+                    <div class="col col-md-4"><a href="sixth.html">服务中心</a></div>
+                </div>
+            </div>
+            <div class="col col-md-1"></div>
+        </div>
+    </div>
+</nav>
+<div id="second-outside">
+    <div id="second-outside-title">
+        <h1>幸福企业</h1>
+    </div>
+    <div id="second-outside-content">
+        <div id="big-one"><span>Hello</span></div>
+        <div id="long-one"><span>Hello</span></div>
+        <div class="small-one"><span>Hello</span></div>
+        <div class="small-one"><span>Hello</span></div>
+    </div>
+</div>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+//    $("#second-outside-content div").on("mousedown", function () {
+//        $(this).css({
+//            transform: "scale(1.2)"
+//        })
+//    });
+//    $("#second-outside-content").on("mouseup", "div", function () {
+//        $(this).css({
+//            transform: "scale(1)"
+//        })
+//    })
+    $("#second-outside-content div").on("mouseover", function () {
+//        $(this).children().css({
+//            display: "inline-block"
+//        });
+        $(this).children().slideDown("slow");
+    });
+$("#second-outside-content div").on("mouseout", function () {
+//    $("#second-outside-content div span").css({
+//        display: "none"
+//    });
+    $("#second-outside-content div span").slideUp("slow");
+})
+</script>
+</body>
+</html>
