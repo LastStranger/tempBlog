@@ -130,7 +130,7 @@
         });
     });
     $("#main>div").on("mouseup","div", function () {
-        console.log("outside");
+
 //        console.log($("#up").html());
 //        let str = $("#up").html();
 //        let arr = str.split("");
@@ -156,7 +156,7 @@
     let operators = ["÷", "x", "-", "+"];
     //    数字监听
     $(".number").on("click", function () {
-        console.log("inside");
+
         let number = this.innerHTML;
         arr.push(number);
         $("#up").html(arr);
