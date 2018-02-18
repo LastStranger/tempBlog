@@ -99,7 +99,7 @@
     </div>
     <input type="button" value="88888" id="777">
 <button id="123">1213345</button>
-    <a href="www.baidu.com" id="999">555555</a>
+    <a href=# id="999">555555</a>
     <ul class="fa-ul" id="contents">
         <!--<li><span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span></li>-->
     </ul>
@@ -144,11 +144,12 @@ $("#123").on("touchstart", function (event) {
 $("#777").on("click", function () {
     $("#123").html("6666666666");
 });
-
-$("#123").onclick(function () {
-   $(this).html("66666")
+    
+$("#999").on("click", function (event) {
+    alert("ddddd");
+    event.preventDefault();
+   $(this).html("666")
 });
-
     //更新搜索结果
     function updateLiInfo(json) {
         let data = json.data;
