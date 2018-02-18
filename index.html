@@ -144,11 +144,10 @@ $("#123").on("touchstart", function (event) {
 $("#777").on("click", function () {
     $("#123").html("6666666666");
 });
-    
+
 $("#999").on("click", function (event) {
-    alert("ddddd");
     event.preventDefault();
-   $(this).html("666")
+   $(this).html("666");
 });
     //更新搜索结果
     function updateLiInfo(json) {
