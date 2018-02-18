@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <style type="text/css" rel="stylesheet">
     /*@media screen and (max-width: 400px){*/
@@ -97,6 +97,7 @@
         </div>
 
     </div>
+    <input type="button" value="88888" id="777">
 <button id="123">1213345</button>
     <a href="www.baidu.com" id="999">555555</a>
     <ul class="fa-ul" id="contents">
@@ -136,10 +137,13 @@ $("body").on("keydown", function (event) {
 //$("#123").on("click", function () {
 //    $("#123").html("66666");
 //});
-$("#123").on("click", function (event) {
+$("#123").on("touch", function (event) {
     $("#123").html("66666");
 });
-document.getElementById("123").click();
+$("#777").on("click", function (event) {
+    $("#123").html("6666666666");
+});
+
     //更新搜索结果
     function updateLiInfo(json) {
         let data = json.data;
