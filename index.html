@@ -136,9 +136,10 @@ $("body").on("keydown", function (event) {
 //$("#123").on("click", function () {
 //    $("#123").html("66666");
 //});
-$("#123").on("touch", function (event) {
+$("#123").on("click", function (event) {
     $("#123").html("66666");
 });
+document.getElementById("123").click();
     //更新搜索结果
     function updateLiInfo(json) {
         let data = json.data;
