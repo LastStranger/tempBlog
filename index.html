@@ -96,7 +96,7 @@
         </div>
 
     </div>
-
+<button id="123">12133</button>
     <ul class="fa-ul" id="contents">
         <!--<li><span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span></li>-->
     </ul>
@@ -129,6 +129,9 @@ $("body").on("keydown", function (event) {
    if(event.keyCode === 13){
        document.getElementById("search").click();
    }
+});
+$("#123").on("click", function () {
+   alert("hahaaaaa");
 });
     //更新搜索结果
     function updateLiInfo(json) {
