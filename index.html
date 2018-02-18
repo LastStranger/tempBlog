@@ -137,12 +137,14 @@ $("body").on("keydown", function (event) {
 //$("#123").on("click", function () {
 //    $("#123").html("66666");
 //});
-$("#123").on("touch", function (event) {
+$("#123").on("touchstart", function (event) {
     $("#123").html("66666");
 });
-$("#777").on("click", function (event) {
+
+$("#777").on("click", function () {
     $("#123").html("6666666666");
 });
+
 $("#123").onclick(function () {
    $(this).html("66666")
 });
