@@ -171,7 +171,8 @@ $("body").on("keydown", function (event) {
 //            }
 //        })
 //    });
-    $('#search').on("click",function() {
+    $('#search').on("click", function(event) {
+        event.preventDefault();
         alert("haha");
         $(".pagination").css({
             visibility: "visible"
