@@ -135,7 +135,8 @@ $("body").on("keydown", function (event) {
 $("#123").on("click", function () {
     $("#123").html("66666");
 });
-$("#123").on("touched", function () {
+$("#123").on("touchend", function (event) {
+    event.preventDefault();
     $("#123").html("66666");
 });
     //更新搜索结果
