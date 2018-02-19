@@ -161,16 +161,16 @@ document.getElementById("123").addEventListener("click", function () {
     function updateLiInfo(json) {
         let data = json.data;
         console.log(data === undefined);
-        if(data.length === 0){
-            $("#contents").append("<li>什么也没找到</li>");
-            return;
-        }
-        $("#contents").children("li").remove();
-        let array = data.datas;
-        if(array === undefined){
-            $("#contents").append("<li>什么也没找到</li>");
-            return;
-        }
+//        if(data.length === 0){
+//            $("#contents").append("<li>什么也没找到</li>");
+//            return;
+//        }
+//        $("#contents").children("li").remove();
+//        let array = data.datas;
+//        if(array === undefined){
+//            $("#contents").append("<li>什么也没找到</li>");
+//            return;
+//        }
 //			console.log(array[0]['magent-link'])
 //        for(let i = 0; i < array.length; i++) {
 //            let hash = array[i]['magent-link'];
