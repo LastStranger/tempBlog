@@ -100,6 +100,7 @@
     <input type="button" value="88888" id="777">
 <button id="123">1213345</button>
 <button id="456">456456</button>
+<button id="789">789789</button>
     <a href=# id="999">555555</a>
     <ul class="fa-ul" id="contents">
         <!--<li><span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span></li>-->
@@ -129,6 +130,9 @@
 <script>
     const baseUrl = "https://hash.wanpeng123.cn";
     document.getElementById("456").innerHTML = "first one";
+    document.getElementById("789").addEventListener("click", function () {
+        document.getElementById("789").innerHTML = "second one"
+    })
 $("body").on("keydown", function (event) {
    if(event.keyCode === 13){
        document.getElementById("search").click();
