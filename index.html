@@ -130,15 +130,15 @@
 <script>
     const baseUrl = "https://hash.wanpeng123.cn";
     document.getElementById("456").innerHTML = "first one";
-
+    document.getElementById("789").addEventListener("click", function () {
+        document.getElementById("789").innerHTML = "second one"
+    })
 $("body").on("keydown", function (event) {
    if(event.keyCode === 13){
        document.getElementById("search").click();
    }
 });
-    document.getElementById("789").addEventListener("click", function () {
-        document.getElementById("789").innerHTML = "second one"
-    })
+
 //$("#123").on("click", function () {
 //    $("#123").html("66666");
 //});
@@ -158,6 +158,143 @@ document.getElementById("123").addEventListener("click", function () {
     document.getElementById("123").innerHTML = "66666"
 });
     //更新搜索结果
+    function updateLiInfo(json) {
+        let data = json.data;
+        console.log(data === undefined);
+        if(data.length === 0){
+            $("#contents").append("<li>什么也没找到</li>");
+            return;
+        }
+        $("#contents").children("li").remove();
+        let array = data.datas;
+        if(array === undefined){
+            $("#contents").append("<li>什么也没找到</li>");
+            return;
+        }
+//			console.log(array[0]['magent-link'])
+        for(let i = 0; i < array.length; i++) {
+            let hash = array[i]['magent-link'];
+            hash = hash.substring(hash.length-40,hash.length);
+            $("#contents").append("<li><a href='https://tv.wanpeng123.cn/jiexi.html?hash=" + hash + "'>" + array[i].title + "</a></li>");
+
+        }
+
+
+    }
+
+//    搜索关键字
+//    $('#keyword').on("input propertychange", function() {
+//
+//        let key = $('#keyword').val();
+//        let server = $("select").val();
+//        let page = 1;
+//        $.ajax({
+//            url: baseUrl + "/search/searchHashByKey/" + key + "/" + server + "/" + page + "",
+//            dataType: "json",
+//            success: function(json) {
+//
+////					console.log(json);
+//                updateLiInfo(json);
+//            }
+//        })
+//    });
+    $('#search').on("click", function(event) {
+        event.preventDefault();
+        alert("haha");
+        $(".pagination").css({
+            visibility: "visible"
+        });
+            $(".pagination>li:not(:first)").remove();
+            for(let i = 0; i < 5; i++){
+                $(".pagination").append(`<li class="page-item"><a class="page-link" href="#"></a></li>`);
+            }
+            $(".pagination").append('<li class="page-item" id="next"><a class="page-link" href="#">Next</a></li>');
+        $(".pagination>li").removeClass("active");
+        $(".pagination>li:nth-child(2)").addClass("active");
+        const arr = $(".pagination>li>a:not(:first):not(:last)");
+        let number = 1;
+        for(let each of arr){
+//            console.log(number);
+//            console.log(number);
+            $(each).html(number);
+            number ++;
+        }
+        let key = $('#keyword').val();
+        let server = $("select").val();
+        let page = 1;
+        $.ajax({
+            url: baseUrl + "/search/searchHashByKey/" + key + "/" + server + "/" + page + "",
+            dataType: "json",
+            success: function(json) {
+
+//					console.log(json);
+                updateLiInfo(json);
+            }
+        })
+    });
+
+    $('.pagination').on("click", "li:not(#next):not(#prev)>a", function(event) {
+//        console.log("dd");
+        event.preventDefault();
+        $(".pagination>li").removeClass("active");
+        $(this).parent().addClass("active");
+        let key = $('#keyword').val();
+        let server = $("select").val();
+        let page = $(this).html();
+        console.log(page + "page");
+        let temp = $(this).parent();
+        $.ajax({
+            url: baseUrl + "/search/searchHashByKey/" + key + "/" + server + "/" + page + "",
+            dataType: "json",
+            success: function(json) {
+
+//					console.log(json);
+                updateLiInfo(json);
+                const arr = $("#contents>li");
+//                console.log(arr.length);
+//                console.log(arr);
+//        console.log($(this).html());
+                if(arr.length < 20){
+                    console.log($(temp).html());
+                    $(temp).nextAll().remove();
+                    console.log("removed");
+                }
+            }
+        });
+
+
+    });
+//    let timer = setInterval(function () {
+//        const arr = $("#contents>li");
+//        console.log(arr.length);
+//        console.log(arr);
+////        console.log($(this).html());
+//        if(arr.length < 20){
+//            $(".active").parent().nextAll().remove();
+//            console.log("removed");
+//        }
+//    }, 1000);
+    $('.pagination').on("click","#next", function (event) {
+        event.preventDefault();
+        $(".pagination>li").removeClass("active");
+        $(".pagination>li:nth-child(2)").addClass("active");
+        const arr = $(".pagination>li>a:not(:first):not(:last)");
+//        console.log(arr);
+        for(let each of arr){
+            let number = Number($(each).html());
+//            console.log(number);
+            number+=5;
+//            console.log(number);
+            $(each).html(number);
+        }
+        document.querySelector(".pagination>li:nth-child(2)>a").click();
+        if($(".pagination>li").length < 1){
+            console.log("first");
+            $(".pagination>li").remove();
+            console.log("final")
+        }
+    });
+
 
 
 
