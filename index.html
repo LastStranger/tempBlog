@@ -130,22 +130,24 @@
 <script>
     const baseUrl = "https://hash.wanpeng123.cn";
     document.getElementById("456").innerHTML = "first one";
-    document.getElementById("789").addEventListener("click", function () {
-        document.getElementById("789").innerHTML = "second one"
-    })
+
 $("body").on("keydown", function (event) {
    if(event.keyCode === 13){
        document.getElementById("search").click();
    }
 });
-
+    document.getElementById("789").addEventListener("click", function () {
+        document.getElementById("789").innerHTML = "second one"
+    })
 //$("#123").on("click", function () {
 //    $("#123").html("66666");
 //});
 //$("#123").on("touchstart", function (event) {
 //    $("#123").html("66666");
 //});
-
+    document.getElementById("123").addEventListener("click", function () {
+        document.getElementById("123").innerHTML = "66666"
+    });
 $("#777").on("click", function () {
     $("#123").html("6666666666");
 });
@@ -154,9 +156,7 @@ $("#999").on("click", function (event) {
     event.preventDefault();
    $(this).html("666");
 });
-document.getElementById("123").addEventListener("click", function () {
-    document.getElementById("123").innerHTML = "66666"
-});
+
     //更新搜索结果
 
 
