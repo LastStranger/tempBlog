@@ -1,15 +1,349 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>John</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
+<style type="text/css" rel="stylesheet">
+    /*@media screen and (max-width: 400px){*/
+        /*ul>li{*/
+            /*font-size: 0.1vh;*/
+            /**/
+            /*overflow: hidden;*/
+        /*}*/
+    /*}*/
+    *{
+        margin: 0;
+        padding: 0;
+
+    }
+    body{
+
+        /*background-color: #202020;*/
+        /*background-color: whitesmoke;*/
+    }
+    .container{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    .form-inline{
+        height: 30vh;
+    }
+    /*.form-inline>.form-control{*/
+        /*height: 20vh;*/
+    /*}*/
+    /*input{*/
+        /*filter:alpha(opacity=50);*/
+        /*-moz-opacity:0.5;*/
+        /*opacity:0.5;*/
+    /*}*/
+    #contents>li{
+        margin: 1vh 0;
+        font-size: 4vh;
+        white-space: pre;
+
+    }
+    .pagination{
+        visibility: hidden;
+    }
+    ul>li>a{
+
+        color: lightskyblue;
+    }
+    ul>li>a:hover{
+        text-decoration:none;
+        color: dimgray;
+    }
+    /*button{*/
+        /*display: inline-block;*/
+    /*}*/
+    /*.form-inline{*/
+        /*margin: 0 auto;*/
+    /*}*/
+</style>
 <body>
-<button class="button">12345</button>
+<div class="container text-center">
+
+    <!--<div class="btn-group">-->
+        <!--<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+            <!--Action <span class="caret"></span>-->
+        <!--</button>-->
+        <!--<ul class="dropdown-menu">-->
+            <!--<li><a href="#">Action</a></li>-->
+            <!--<li><a href="#">Another action</a></li>-->
+            <!--<li><a href="#">Something else here</a></li>-->
+            <!--<li role="separator" class="divider"></li>-->
+            <!--<li><a href="#">Separated link</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+    <div class="form-inline row">
+        <div class="col-md-12">
+            <select class="form-control" >
+                <option value="1">服务1</option>
+                <option value="2">服务2</option>
+                <option value="3">服务3</option>
+                <option value="4">服务4</option>
+                <option value="5">服务5</option>
+            </select>
+
+            <input type="text" class="form-control" id="keyword" placeholder="关键词" />
+
+            <button class="btn btn-primary" id="search">
+                <i class="fa fa-search"></i>
+                搜索</button>
+        </div>
+
+    </div>
+    <input type="button" value="88888" id="777">
+<button id="123">1213345</button>
+<button id="456">456456</button>
+    <a href=# id="999">555555</a>
+    <ul class="fa-ul" id="contents">
+        <!--<li><span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span></li>-->
+    </ul>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item" id="prev"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item" id="next"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!--<script src="js/jquery-2.1.4.min.js"></script>-->
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<!--<script-->
+        <!--src="http://code.jquery.com/jquery-3.3.1.min.js"-->
+        <!--integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="-->
+        <!--crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script>
-    document.getElementsByClassName("button")[0].addEventListener("click", function () {
-        document.getElementsByClassName("button")[0].innerHTML = "666666";
+    const baseUrl = "https://hash.wanpeng123.cn";
+    document.getElementById("456").innerHTML = "first one";
+$("body").on("keydown", function (event) {
+   if(event.keyCode === 13){
+       document.getElementById("search").click();
+   }
+});
+
+//$("#123").on("click", function () {
+//    $("#123").html("66666");
+//});
+//$("#123").on("touchstart", function (event) {
+//    $("#123").html("66666");
+//});
+
+$("#777").on("click", function () {
+    $("#123").html("6666666666");
+});
+
+$("#999").on("click", function (event) {
+    event.preventDefault();
+   $(this).html("666");
+});
+document.getElementById("123").addEventListener("click", function () {
+    document.getElementById("123").innerHTML = "66666"
+});
+    //更新搜索结果
+    function updateLiInfo(json) {
+        let data = json.data;
+        console.log(data === undefined);
+        if(data.length === 0){
+            $("#contents").append("<li>什么也没找到</li>");
+            return;
+        }
+        $("#contents").children("li").remove();
+        let array = data.datas;
+        if(array === undefined){
+            $("#contents").append("<li>什么也没找到</li>");
+            return;
+        }
+//			console.log(array[0]['magent-link'])
+        for(let i = 0; i < array.length; i++) {
+            let hash = array[i]['magent-link'];
+            hash = hash.substring(hash.length-40,hash.length);
+            $("#contents").append("<li><a href='https://tv.wanpeng123.cn/jiexi.html?hash=" + hash + "'>" + array[i].title + "</a></li>");
+
+        }
+
+
+    }
+
+//    搜索关键字
+//    $('#keyword').on("input propertychange", function() {
+//
+//        let key = $('#keyword').val();
+//        let server = $("select").val();
+//        let page = 1;
+//        $.ajax({
+//            url: baseUrl + "/search/searchHashByKey/" + key + "/" + server + "/" + page + "",
+//            dataType: "json",
+//            success: function(json) {
+//
+////					console.log(json);
+//                updateLiInfo(json);
+//            }
+//        })
+//    });
+    $('#search').on("click", function(event) {
+        event.preventDefault();
+        alert("haha");
+        $(".pagination").css({
+            visibility: "visible"
+        });
+            $(".pagination>li:not(:first)").remove();
+            for(let i = 0; i < 5; i++){
+                $(".pagination").append(`<li class="page-item"><a class="page-link" href="#"></a></li>`);
+            }
+            $(".pagination").append('<li class="page-item" id="next"><a class="page-link" href="#">Next</a></li>');
+        $(".pagination>li").removeClass("active");
+        $(".pagination>li:nth-child(2)").addClass("active");
+        const arr = $(".pagination>li>a:not(:first):not(:last)");
+        let number = 1;
+        for(let each of arr){
+//            console.log(number);
+//            console.log(number);
+            $(each).html(number);
+            number ++;
+        }
+        let key = $('#keyword').val();
+        let server = $("select").val();
+        let page = 1;
+        $.ajax({
+            url: baseUrl + "/search/searchHashByKey/" + key + "/" + server + "/" + page + "",
+            dataType: "json",
+            success: function(json) {
+
+//					console.log(json);
+                updateLiInfo(json);
+            }
+        })
+    });
+
+    $('.pagination').on("click", "li:not(#next):not(#prev)>a", function(event) {
+//        console.log("dd");
+        event.preventDefault();
+        $(".pagination>li").removeClass("active");
+        $(this).parent().addClass("active");
+        let key = $('#keyword').val();
+        let server = $("select").val();
+        let page = $(this).html();
+        console.log(page + "page");
+        let temp = $(this).parent();
+        $.ajax({
+            url: baseUrl + "/search/searchHashByKey/" + key + "/" + server + "/" + page + "",
+            dataType: "json",
+            success: function(json) {
+
+//					console.log(json);
+                updateLiInfo(json);
+                const arr = $("#contents>li");
+//                console.log(arr.length);
+//                console.log(arr);
+//        console.log($(this).html());
+                if(arr.length < 20){
+                    console.log($(temp).html());
+                    $(temp).nextAll().remove();
+                    console.log("removed");
+                }
+            }
+        });
+
+
+    });
+//    let timer = setInterval(function () {
+//        const arr = $("#contents>li");
+//        console.log(arr.length);
+//        console.log(arr);
+////        console.log($(this).html());
+//        if(arr.length < 20){
+//            $(".active").parent().nextAll().remove();
+//            console.log("removed");
+//        }
+//    }, 1000);
+    $('.pagination').on("click","#next", function (event) {
+        event.preventDefault();
+        $(".pagination>li").removeClass("active");
+        $(".pagination>li:nth-child(2)").addClass("active");
+        const arr = $(".pagination>li>a:not(:first):not(:last)");
+//        console.log(arr);
+        for(let each of arr){
+            let number = Number($(each).html());
+//            console.log(number);
+            number+=5;
+//            console.log(number);
+            $(each).html(number);
+        }
+        document.querySelector(".pagination>li:nth-child(2)>a").click();
+        if($(".pagination>li").length < 1){
+            console.log("first");
+            $(".pagination>li").remove();
+            console.log("final")
+        }
+    });
+
+    $("#prev").on("click", function (event) {
+        let flag = false;
+        event.preventDefault();
+        $(".pagination>li").removeClass("active");
+        $(".pagination>li:nth-child(2)").addClass("active");
+        const arr = $(".pagination>li>a:not(:first):not(:last)");
+        if(arr.length < 5){
+            let lastPage = $(".pagination>li>a:last").html();
+            console.log(lastPage);
+            let firstPage = lastPage - 5;
+            if(firstPage < 1){
+                flag = true;
+                firstPage = 1;
+            }
+            $(".pagination>li:not(:first)").remove();
+            for(let i = 0; i < 5; i++){
+                $(".pagination").append(`<li class="page-item"><a class="page-link" href="#">${firstPage}</a></li>`);
+                firstPage ++;
+            }
+            $(".pagination").append('<li class="page-item" id="next"><a class="page-link" href="#">Next</a></li>');
+            document.querySelector(".pagination>li:nth-child(2)>a").click();
+            return null;
+        }
+
+        for(let each of arr){
+            let number = Number($(each).html());
+//            console.log(number);
+            number-=5;
+            if(number < 1){
+                flag = true;
+                break;
+            }
+//            console.log(number);
+            $(each).html(number);
+        }
+        if(flag){
+            let number = 1;
+            for(let each of arr){
+//            console.log(number);
+//            console.log(number);
+                $(each).html(number);
+                number ++;
+            }
+        }
+//        $(".pagination").
+        document.querySelector(".pagination>li:nth-child(2)>a").click();
     })
+
+
+
 </script>
+
+
 </body>
+
 </html>
