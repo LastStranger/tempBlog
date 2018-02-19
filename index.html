@@ -233,37 +233,7 @@ document.getElementById("123").addEventListener("click", function () {
         })
     });
 
-    $('.pagination').on("click", "li:not(#next):not(#prev)>a", function(event) {
-//        console.log("dd");
-        event.preventDefault();
-        $(".pagination>li").removeClass("active");
-        $(this).parent().addClass("active");
-        let key = $('#keyword').val();
-        let server = $("select").val();
-        let page = $(this).html();
-        console.log(page + "page");
-        let temp = $(this).parent();
-        $.ajax({
-            url: baseUrl + "/search/searchHashByKey/" + key + "/" + server + "/" + page + "",
-            dataType: "json",
-            success: function(json) {
 
-//					console.log(json);
-                updateLiInfo(json);
-                const arr = $("#contents>li");
-//                console.log(arr.length);
-//                console.log(arr);
-//        console.log($(this).html());
-                if(arr.length < 20){
-                    console.log($(temp).html());
-                    $(temp).nextAll().remove();
-                    console.log("removed");
-                }
-            }
-        });
-
-
-    });
 //    let timer = setInterval(function () {
 //        const arr = $("#contents>li");
 //        console.log(arr.length);
