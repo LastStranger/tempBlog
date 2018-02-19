@@ -158,29 +158,7 @@ document.getElementById("123").addEventListener("click", function () {
     document.getElementById("123").innerHTML = "66666"
 });
     //更新搜索结果
-    function updateLiInfo(json) {
-        let data = json.data;
-        console.log(data === undefined);
-        if(data.length === 0){
-            $("#contents").append("<li>什么也没找到</li>");
-            return;
-        }
-        $("#contents").children("li").remove();
-        let array = data.datas;
-        if(array === undefined){
-            $("#contents").append("<li>什么也没找到</li>");
-            return;
-        }
-//			console.log(array[0]['magent-link'])
-        for(let i = 0; i < array.length; i++) {
-            let hash = array[i]['magent-link'];
-            hash = hash.substring(hash.length-40,hash.length);
-            $("#contents").append("<li><a href='https://tv.wanpeng123.cn/jiexi.html?hash=" + hash + "'>" + array[i].title + "</a></li>");
 
-        }
-
-
-    }
 
 //    搜索关键字
 //    $('#keyword').on("input propertychange", function() {
