@@ -274,26 +274,7 @@ document.getElementById("123").addEventListener("click", function () {
 //            console.log("removed");
 //        }
 //    }, 1000);
-    $('.pagination').on("click","#next", function (event) {
-        event.preventDefault();
-        $(".pagination>li").removeClass("active");
-        $(".pagination>li:nth-child(2)").addClass("active");
-        const arr = $(".pagination>li>a:not(:first):not(:last)");
-//        console.log(arr);
-        for(let each of arr){
-            let number = Number($(each).html());
-//            console.log(number);
-            number+=5;
-//            console.log(number);
-            $(each).html(number);
-        }
-        document.querySelector(".pagination>li:nth-child(2)>a").click();
-        if($(".pagination>li").length < 1){
-            console.log("first");
-            $(".pagination>li").remove();
-            console.log("final")
-        }
-    });
+
 
 
 
