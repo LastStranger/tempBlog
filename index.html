@@ -176,40 +176,7 @@ document.getElementById("123").addEventListener("click", function () {
 //            }
 //        })
 //    });
-    $('#search').on("click", function(event) {
-        event.preventDefault();
-        alert("haha");
-        $(".pagination").css({
-            visibility: "visible"
-        });
-            $(".pagination>li:not(:first)").remove();
-            for(let i = 0; i < 5; i++){
-                $(".pagination").append(`<li class="page-item"><a class="page-link" href="#"></a></li>`);
-            }
-            $(".pagination").append('<li class="page-item" id="next"><a class="page-link" href="#">Next</a></li>');
-        $(".pagination>li").removeClass("active");
-        $(".pagination>li:nth-child(2)").addClass("active");
-        const arr = $(".pagination>li>a:not(:first):not(:last)");
-        let number = 1;
-        for(let each of arr){
-//            console.log(number);
-//            console.log(number);
-            $(each).html(number);
-            number ++;
-        }
-        let key = $('#keyword').val();
-        let server = $("select").val();
-        let page = 1;
-        $.ajax({
-            url: baseUrl + "/search/searchHashByKey/" + key + "/" + server + "/" + page + "",
-            dataType: "json",
-            success: function(json) {
 
-//					console.log(json);
-                updateLiInfo(json);
-            }
-        })
-    });
 
 
 //    let timer = setInterval(function () {
