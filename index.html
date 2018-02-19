@@ -155,10 +155,12 @@ $("#999").on("click", function (event) {
    $(this).html("666");
 });
 document.getElementById("123").addEventListener("click", function () {
-    document.getElementById("123").innerHTML = "66666"
+    abc();
 });
     //更新搜索结果
-
+function abc() {
+    document.getElementById("123").innerHTML = "66666";
+}
 //    搜索关键字
 //    $('#keyword').on("input propertychange", function() {
 //
