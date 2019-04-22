@@ -48,3 +48,14 @@ module.exports = {
 ```
 [Thanks to the usage of the optimization.usedExports and the unused option of the UglifyJsPlugin, unnecessary code was removed. Please note, that it is a default behavior in the UglifyJsPlugin, so using it with default configuration will also remove dead code (aside from running many other compressing processes).](https://wanago.io/2018/08/13/webpack-4-course-part-seven-decreasing-the-bundle-size-with-tree-shaking/)
 
+```js
+"presets": [
+    [
+      "@babel/preset-react"
+    ],
+    [
+      "@babel/preset-env",{"modules": "cjs"}
+    ]
+  ],
+  ```
+  2. 设置modules等于cjs将不会进行树摇优化,如果不设置modules,默认是auto,会进行树摇优化,如果设置为false也会进行树摇优化
