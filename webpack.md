@@ -58,4 +58,6 @@ module.exports = {
     ]
   ],
   ```
-  2. 设置modules等于cjs将不会进行树摇优化,如果不设置modules,默认是auto,会进行树摇优化,如果设置为false也会进行树摇优化
+  2. 设置modules等于cjs将不会进行树摇优化,如果不设置modules,默认是auto,会进行树摇优化,如果设置为false也会进行树摇优化,  
+
+这是因为[For example, if you are calling Babel using babel-loader, modules will be set to false because webpack supports ES modules](https://github.com/babel/babel/pull/8485/files#r236086742) 因为Babel不是webpack专属的,如果是用的webpack,它识别这种import语法,然后会根据这种import语法去做一些事情,modules:false不是说让浏览器直接使用import,而是让webpack直接使用import,[stackOverFlow问题链接](https://stackoverflow.com/questions/55792519/what-does-the-modulesauto-means-in-babel-preset-env-field/55792651#55792651)
